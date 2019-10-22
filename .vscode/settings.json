@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "env/bin/python3",
-    "files.watcherExclude": {
-        "**/env/**": true,
-        "**/.git/**": true,
-        "**/.vscode/**": true
-    }
-}
