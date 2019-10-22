@@ -20,22 +20,7 @@ test_imgs = test_imgs/255.0
 try:
     model = keras.models.load_model('./models/fashionexample.h5')
 except FileNotFoundError:
-    # create tensorflow model otherwise
-    model = keras.Sequential([
-        keras.layers.Flatten(input_shape=(28,28)),
-        keras.layers.Dense(128, activation="relu"),
-        keras.layers.Dense(10, activation="softmax")
-        ])
-
-    model.compile(
-        optimizer='adam',
-        loss='sparse_categorical_crossentropy',
-        metrics=["accuracy"]
-        )
-
-    # train model and save
-    model.fit(train_imgs, train_labels, epochs=10)
-    model.save('./models/fashionexample.h5')
+    exit()
 
 test_loss, test_acc = model.evaluate(test_imgs, test_labels)
 print('loss:' + str(test_loss))
