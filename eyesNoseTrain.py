@@ -16,8 +16,9 @@ train_data = './trainingData/train'
 test_data = './trainingData/test'
 
 def one_hot_label(img):
+    ohl = None
     label = img.split('.')[0]
-    if label == 'eye':
+    if label == 'eyes':
         ohl = np.array([1, 0])
     elif label == 'nose':
         ohl = np.array([0, 1])
@@ -58,10 +59,10 @@ model.add(InputLayer(input_shape = [64, 64, 1]))
 model.add(Conv2D(filters = 32, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
 model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
-model.add(Conv2D(filters = 32, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
+model.add(Conv2D(filters = 50, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
 model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
-model.add(Conv2D(filters = 32, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
+model.add(Conv2D(filters = 80, kernel_size = 5, strides = 1, padding = 'same', activation = 'relu'))
 model.add(MaxPool2D(pool_size = 5, padding = 'same'))
 
 model.add(Dropout(0.25))

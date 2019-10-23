@@ -20,6 +20,7 @@ test_imgs = test_imgs/255.0
 try:
     model = keras.models.load_model('./models/fashionexample.h5')
 except FileNotFoundError:
+    print('fashionexample.h5 not found/trained.')
     exit()
 
 test_loss, test_acc = model.evaluate(test_imgs, test_labels)
